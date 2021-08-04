@@ -39,11 +39,15 @@
 			} else if (type === 'numeric') {
 				value = +value;
 			} else if (type === 'enum') {
-				if (attr.values.indexOf(value) === -1) {
+        var index = attr.values.indexOf(value) === -1 ?
+          attr.values.indexOf(+value) : attr.values.indexOf(value);
+				if (index === -1) {
 					throw new Error(
 						value +' is not valid for the '+ attr.name + ' attribute'
 					);
-				}
+				} else {
+          value = attr.values[index];
+        }
 			}
 
 			datum[attr.name] = value;
@@ -118,7 +122,11 @@ class 'class' = '{' first:string rest:(',' value:string { return value; })* '}' 
 	rest.unshift(first);
 	return {
 		type: 'enum',
-		values: rest
+		values: rest.map((item) => {
+      if (Number.isNaN(+item))
+        return item;
+      return +item;
+    })
 	};
 }
 

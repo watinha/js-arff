@@ -41,7 +41,8 @@
     "lint": "standard",
     "posttest": "npm run lint",
     "prepublish": "pegjs -o parser.js arff.pegjs",
-    "test": "jest"
+    "test": "jest",
+    "postinstall": "pegjs -o parser.js arff.pegjs"
   },
   "dependencies": {
     "lodash": "^4.17.4",

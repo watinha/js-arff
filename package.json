@@ -1,6 +1,6 @@
 {
-  "name": "arff",
-  "version": "0.1.1",
+  "name": "@watinha/arff",
+  "version": "0.1.2",
   "license": "ISC",
   "description": "ARFF parsing and formatting",
   "keywords": [
@@ -13,15 +13,14 @@
     "weka"
   ],
   "homepage": "https://github.com/julien-f/js-arff",
-  "bugs": "https://github.com/julien-f/js-arff/issues",
+  "bugs": {
+    "url": "https://github.com/julien-f/js-arff/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/julien-f/js-arff"
+    "url": "git+https://github.com/julien-f/js-arff.git"
   },
-  "author": {
-    "name": "Julien Fontanet",
-    "email": "julien.fontanet@isonoe.net"
-  },
+  "author": "Julien Fontanet <julien.fontanet@isonoe.net>",
   "preferGlobal": false,
   "engines": {
     "node": ">=6.0"
@@ -52,5 +51,6 @@
     "hooks": {
       "pre-commit": "npm test"
     }
-  }
+  },
+  "main": "index.js"
 }
